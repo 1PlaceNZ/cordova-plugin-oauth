@@ -191,11 +191,7 @@ class OAuthPlugin : CDVPlugin, SFSafariViewControllerDelegate, ASWebAuthenticati
         self.authSystem = nil
 
         var jsobj : [String : String] = [:]
-        let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
-
-        queryItems?.forEach {
-            jsobj[$0.name] = $0.value
-        }
+        jsobj["url"] = url.absoluteString
 
         if #available(iOS 10.0, *) {
             os_log("OAuth called back with parameters.", log: self.logger!, type: .info)

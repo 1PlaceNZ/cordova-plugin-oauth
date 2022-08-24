@@ -75,7 +75,7 @@ Usage
     plugin will send a message to the Cordova app.
 
     The message begins with `oauth::` and is followed by a JSON object
-    containing all of the key/value pairs from the OAuth redirect query string.
+    with the field `url` containing the callback redirect url.
 
     ```javascript
     // Called from a callback URL like

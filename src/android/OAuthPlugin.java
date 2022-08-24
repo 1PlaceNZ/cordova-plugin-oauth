@@ -116,9 +116,7 @@ public class OAuthPlugin extends CordovaPlugin {
             try {
                 JSONObject jsobj = new JSONObject();
 
-                for (String queryKey : uri.getQueryParameterNames()) {
-                    jsobj.put(queryKey, uri.getQueryParameter(queryKey));
-                }
+                jsobj.put("url", uri.toString());
 
                 final String msg = jsobj.toString();
                 loginSuccessful = true;
